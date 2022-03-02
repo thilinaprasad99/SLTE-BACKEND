@@ -1,0 +1,22 @@
+{
+  "name": "cws-api",
+  "script": "server.js",
+  "watch": true,
+  "version": "1.0.0",
+  "node_args": "--harmony",
+  "merge_logs": true,
+  "env": {
+    "NODE_ENV": "test",
+    "HOST": {
+      "server_url": "http://127.0.0.1"
+    },
+    "ALLOW_ORIGINS": ["http://localhost:3000", "http://localhost:8080","https://admin.slte.lk", "*"],
+    "KEY_CLOAK": {
+      "URI": "http://localhost:8080/auth/",
+      "REALM": "cws",
+      "CLIENT_ID": "cws_api",
+      "CLIENT_SECRET": "0f0279a1-037f-4c55-a9a0-99df50b6854e",
+      "REDIRECT_URI": "imm://callback"
+    }
+  }
+}
