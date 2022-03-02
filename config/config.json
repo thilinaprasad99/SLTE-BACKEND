@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
+    "username": "slte-db-user",
+    "password": "Thilina1996",
     "database": "slte_student",
     "host": "127.0.0.1",
     "dialect": "mysql",
