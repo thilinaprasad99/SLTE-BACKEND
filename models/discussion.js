@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Discussion extends Model {
     /**
@@ -12,20 +10,24 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  Discussion.init({
-    discussion_name: DataTypes.STRING,
-    discussion_description: DataTypes.STRING,
-    start_date: DataTypes.DATEONLY,
-    start_time: DataTypes.STRING,
-    discussion_duration: DataTypes.STRING,
-    discussion_id: DataTypes.BIGINT,
-    discussion_passcode: DataTypes.STRING,
-    quiz_title: DataTypes.STRING,
-    subscription: DataTypes.ENUM('Day', 'Night')
-  }, {
-    sequelize,
-    modelName: 'Discussion',
-  });
+  }
+  Discussion.init(
+    {
+      discussion_name: DataTypes.STRING,
+      discussion_description: DataTypes.STRING,
+      start_date: DataTypes.DATEONLY,
+      start_time: DataTypes.STRING,
+      discussion_duration: DataTypes.STRING,
+      discussion_id: DataTypes.BIGINT,
+      discussion_passcode: DataTypes.STRING,
+      quiz_title: DataTypes.STRING,
+      subscription: DataTypes.ENUM("Day", "Night"),
+      video_link: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "Discussion",
+    }
+  );
   return Discussion;
 };

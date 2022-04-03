@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Meeting extends Model {
     /**
@@ -12,19 +10,23 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  Meeting.init({
-    meeting_topik: DataTypes.STRING,
-    meeting_description: DataTypes.STRING,
-    start_date: DataTypes.DATEONLY,
-    start_time: DataTypes.STRING,
-    meeting_duration: DataTypes.STRING,
-    meeting_id: DataTypes.BIGINT,
-    meeting_passcode: DataTypes.STRING,
-    subscription: DataTypes.ENUM('Day', 'Night')
-  }, {
-    sequelize,
-    modelName: 'Meeting',
-  });
+  }
+  Meeting.init(
+    {
+      meeting_topik: DataTypes.STRING,
+      meeting_description: DataTypes.STRING,
+      start_date: DataTypes.DATEONLY,
+      start_time: DataTypes.STRING,
+      meeting_duration: DataTypes.STRING,
+      meeting_id: DataTypes.BIGINT,
+      meeting_passcode: DataTypes.STRING,
+      subscription: DataTypes.ENUM("Day", "Night"),
+      video_link: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "Meeting",
+    }
+  );
   return Meeting;
 };
